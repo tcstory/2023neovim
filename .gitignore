@@ -1,0 +1,13 @@
+plugin
+spell
+ftplugin
+coc-settings.json
+.luarc.json
+lazy-lock.json
+
+lua/plugins/
+lua/core/
+init.lua
+LICENSE
+.stylua.toml
+.github/
