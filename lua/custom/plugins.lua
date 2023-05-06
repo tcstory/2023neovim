@@ -47,6 +47,9 @@ local plugins = {
     opts = {
       ensure_installed = {
         "lua-language-server",
+        "vue-language-server",
+        "typescript-language-server",
+        "vue-language-server"
       },
     },
   },
@@ -59,7 +62,31 @@ local plugins = {
     dependencies = {
       'nvim-lua/plenary.nvim'
     }
-  }
+  },
+  -- In order to modify the `lspconfig` configuration:
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require "plugins.configs.lspconfig"
+      require "custom.configs.lspconfig"
+    end,
+  },
+
+  {
+    "NvChad/nvterm",
+    opts = {
+      terminals = {
+        type_opts = {
+          float = {
+            row = 0.1,
+            col = 0.1,
+            width = 0.8,
+            height = 0.7,
+          },
+        }
+      },
+    }
+  },
 }
 
 return plugins;
